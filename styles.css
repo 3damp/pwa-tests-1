@@ -46,3 +46,9 @@ input {
   font-size: 48px;
   font-weight: bold;
 }
+#install {
+  color: #222;
+  padding: 6px 20px;
+  background-color: #555;
+  border-radius: 8px;
+}
