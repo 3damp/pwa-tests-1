@@ -7,7 +7,7 @@
   "start_url": "/pwa-tests-1/dice/",
  
   "background_color": "#222",
-  "theme_color": "#bfff00",
+  "theme_color": "#222",
  
   "display": "standalone", 
  
