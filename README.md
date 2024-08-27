@@ -1,3 +1,3 @@
-# PWA Tests
+# PWA Examples
 
-## [Here](https://3damp.github.io/pwa-tests-1/)
+- ## [Dice Roller](https://3damp.github.io/pwa-tests-1/dice)
