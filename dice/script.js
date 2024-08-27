@@ -1,9 +1,12 @@
 
-const faceCount = document.getElementById('face-count');
+const facesPool = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 20, 100];
+
+const dieInfo = document.getElementById('face-count');
 const dieContainer = document.getElementById('die-container');
 const total = document.getElementById('total');
 
-let faces = parseInt(localStorage.getItem('faces')) || 6;
+let facesIndex = parseInt(localStorage.getItem('faces')) ?? 4;
+let faces = facesPool[facesIndex];
 let diceSaved = JSON.parse(localStorage.getItem('dice')) || [{ color: randomColor() }];
 const dieElements = [];
 
@@ -90,18 +93,20 @@ function removeDie() {
 }
 
 function addFace() {
-  setFaces(faces + 1);
+  setFaces(facesIndex + 1);
 }
 function removeFace() {
-  setFaces(faces - 1);
+  setFaces(facesIndex - 1);
 }
 function setFaces(value) {
-  faces = value;
-  localStorage.setItem('faces', faces);
+  if (value < 0 || value >= facesPool.length) return;
+  facesIndex = value;
+  faces = facesPool[facesIndex];
+  localStorage.setItem('faces', facesIndex);
   updateFaceCount();
 }
 function updateFaceCount() {
-  faceCount.innerText = diceSaved.length + ' x D' + faces;
+  dieInfo.innerText = diceSaved.length + ' x D' + faces;
 }
 
 function randomColor() {
