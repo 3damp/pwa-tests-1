@@ -4,7 +4,7 @@ const dieContainer = document.getElementById('die-container');
 const total = document.getElementById('total');
 
 let faces = parseInt(localStorage.getItem('faces')) || 6;
-let diceSaved = JSON.parse(localStorage.getItem('dice')) || [{color: randomColor()}];
+let diceSaved = JSON.parse(localStorage.getItem('dice')) || [{ color: randomColor() }];
 const dieElements = [];
 
 updateFaceCount();
@@ -30,7 +30,29 @@ function createDieElement(value, color) {
   return die;
 }
 
-function roll() {
+function startRoll() {
+  const ticks = 9;
+  let totalTickCount = 0;
+  let dotTickCount = 0;
+  total.innerText = '.';
+
+  const interval = setInterval(() => {
+    totalTickCount++;
+    dotTickCount++;
+    if (totalTickCount >= ticks) {
+      clearInterval(interval);
+      endRoll();
+      return;
+    }
+    if (dotTickCount >= (ticks / 3)) {
+      dotTickCount = 0;
+      total.innerText += '.';
+    }
+    rollTick();
+  }, 100);
+}
+
+function endRoll() {
   let sum = 0;
   dieElements.forEach((die, index) => {
     const value = Math.ceil(Math.random() * faces);
@@ -42,9 +64,16 @@ function roll() {
   saveDice();
 }
 
+function rollTick() {
+  dieElements.forEach((die, index) => {
+    const value = Math.ceil(Math.random() * faces);
+    die.innerText = value;
+  });
+}
+
 function addDie() {
   const color = randomColor();
-  diceSaved.push({color});
+  diceSaved.push({ color });
   const die = createDieElement(undefined, color);
   dieElements.push(die);
   dieContainer.appendChild(die);

@@ -31,7 +31,7 @@
       </div>
       <div>
         <button onclick="removeDie()" class="count-button">-</button>
-        <button onclick="roll()" id="roll-button">ROLL</button>
+        <button onclick="startRoll()" id="roll-button">ROLL</button>
         <button onclick="addDie()" class="count-button">+</button>
       </div>
     </footer>
@@ -40,8 +40,8 @@
     <script src="script.js"></script>
     <script>
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.register("/pwa-tests-1/test/sw.js", {
-          scope: "/pwa-tests-1/test/",
+        navigator.serviceWorker.register("/pwa-tests-1/dice/sw.js", {
+          scope: "/pwa-tests-1/dice/",
         });
       }
     </script>
