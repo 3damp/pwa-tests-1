@@ -35,6 +35,12 @@
         "sizes": "512x512",
         "src": "/pwa-tests-1/dice/img/maskable_icon_x512.png",
         "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "512x512",
+        "src": "/pwa-tests-1/dice/img/icon1.png",
+        "type": "image/png"
       }
   ]
 }
