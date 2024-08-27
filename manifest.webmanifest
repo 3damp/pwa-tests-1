@@ -15,7 +15,7 @@
       {
         "src": "/pwa-tests-1/img/icon1.png",
         "type": "image/png",
-        "sizes": "700x700"
+        "sizes": "512x512"
       }
   ]
 }
