@@ -1,0 +1,21 @@
+{
+  "name": "Dice Roller",
+  "short_name": "Dice",
+  "description": "Digital dice roller for tabletop games.",
+ 
+  "scope": "/pwa-tests-1/dice/",
+  "start_url": "/pwa-tests-1/dice/",
+ 
+  "background_color": "#222",
+  "theme_color": "#bfff00",
+ 
+  "display": "standalone", 
+ 
+  "icons": [
+      {
+        "src": "/pwa-tests-1/dice/img/icon1.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}

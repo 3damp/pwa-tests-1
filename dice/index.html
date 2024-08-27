@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="canonical" href="https://3damp.github.io/pwa-tests-1/dice/" />
+    <link rel="manifest" href="/pwa-tests-1/dice/manifest.webmanifest" />
+    <title>Dice Roller</title>
+  </head>
+  <body>
+    
+    <header>
+      <!-- <h1></h1> -->
+    </header>
+
+    <div class="main-container">
+      <div id="die-container"></div>
+      <h3>TOTAL</h3>
+      <span id="total">0</span>
+    </div>
+
+    <footer class="count-container">
+      <div>
+        <button onclick="removeFace()" class="face-button">-</button>
+        <span id="face-count">D-</span>
+        <button onclick="addFace()" class="face-button">+</button>
+      </div>
+      <div>
+        <button onclick="removeDie()" class="count-button">-</button>
+        <button onclick="roll()" id="roll-button">ROLL</button>
+        <button onclick="addDie()" class="count-button">+</button>
+      </div>
+    </footer>
+
+    <button id="install" hidden>Install</button>
+    <script src="script.js"></script>
+    <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("/pwa-tests-1/test/sw.js", {
+          scope: "/pwa-tests-1/test/",
+        });
+      }
+    </script>
+  </body>
+</html>
