@@ -3,6 +3,7 @@
 }
 
 body {
+  touch-action: manipulation;
   position: fixed;
   font-family: "Roboto", sans-serif;
   background-color: #222;
