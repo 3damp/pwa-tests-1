@@ -13,9 +13,28 @@
  
   "icons": [
       {
-        "src": "/pwa-tests-1/dice/img/icon1.png",
-        "type": "image/png",
-        "sizes": "512x512"
+        "purpose": "maskable",
+        "sizes": "128x128",
+        "src": "/pwa-tests-1/dice/maskable_icon_x128.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "maskable",
+        "sizes": "192x192",
+        "src": "/pwa-tests-1/dice/maskable_icon_x192.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "maskable",
+        "sizes": "384x384",
+        "src": "/pwa-tests-1/dice/maskable_icon_x384.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "maskable",
+        "sizes": "512x512",
+        "src": "/pwa-tests-1/dice/maskable_icon_x512.png",
+        "type": "image/png"
       }
   ]
 }
