@@ -5,7 +5,8 @@ const dieInfo = document.getElementById('face-count');
 const dieContainer = document.getElementById('die-container');
 const total = document.getElementById('total');
 
-let facesIndex = parseInt(localStorage.getItem('faces')) ?? 4;
+let facesIndex = parseInt(localStorage.getItem('faces'));
+if (isNaN(facesIndex)) facesIndex = 4;
 let faces = facesPool[facesIndex];
 let diceSaved = JSON.parse(localStorage.getItem('dice')) || [{ color: randomColor() }];
 const dieElements = [];
