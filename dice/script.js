@@ -4,6 +4,7 @@ const facesPool = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 20, 100];
 const dieInfo = document.getElementById('face-count');
 const dieContainer = document.getElementById('die-container');
 const total = document.getElementById('total');
+const rollButton = document.getElementById('roll-button');
 
 let facesIndex = parseInt(localStorage.getItem('faces'));
 if (isNaN(facesIndex)) facesIndex = 4;
@@ -12,6 +13,7 @@ let diceSaved = JSON.parse(localStorage.getItem('dice')) || [{ color: randomColo
 const dieElements = [];
 
 updateFaceCount();
+updateDiceCount();
 
 
 function init() {
@@ -81,7 +83,7 @@ function addDie() {
   const die = createDieElement(undefined, color);
   dieElements.push(die);
   dieContainer.appendChild(die);
-  updateFaceCount();
+  updateDiceCount();
   saveDice();
 }
 function removeDie() {
@@ -89,7 +91,7 @@ function removeDie() {
   const die = dieElements.pop();
   die.remove();
   diceSaved.pop();
-  updateFaceCount();
+  updateDiceCount();
   saveDice();
 }
 
@@ -107,7 +109,10 @@ function setFaces(value) {
   updateFaceCount();
 }
 function updateFaceCount() {
-  dieInfo.innerText = diceSaved.length + ' x D' + faces;
+  dieInfo.innerText = 'D' + faces;
+}
+function updateDiceCount() {
+  rollButton.innerText = 'ROLL x' + diceSaved.length;
 }
 
 function randomColor() {
